@@ -1,0 +1,18 @@
+item.me_naming_tool.name=ME命名工具
+itemGroup.menamingtool=ME命名工具
+
+menamingtool.gui.confirm=确定
+menamingtool.gui.reset=重置
+menamingtool.gui.cancel=取消
+menamingtool.gui.template=命名模板
+menamingtool.gui.start=起始
+menamingtool.gui.current=当前
+menamingtool.gui.step=步进
+menamingtool.gui.format=数字格式
+menamingtool.gui.preview=预览
+menamingtool.msg.named=已命名AE2方块为: %s
+menamingtool.tip.template=模板: %s
+menamingtool.tip.format=格式: %s  起始: %d  步进: %d
+menamingtool.tip.next=下一个: %s
+menamingtool.tip.usage1=§7Shift+右键空气: 打开模板设置
+menamingtool.tip.usage2=§7右键AE2方块: 自动命名
