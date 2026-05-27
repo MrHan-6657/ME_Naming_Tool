@@ -1,0 +1,18 @@
+item.me_naming_tool.name=ME Naming Tool
+itemGroup.menamingtool=ME Naming Tool
+
+menamingtool.gui.confirm=Confirm
+menamingtool.gui.reset=Reset
+menamingtool.gui.cancel=Cancel
+menamingtool.gui.template=Naming Template
+menamingtool.gui.start=Start
+menamingtool.gui.current=Current
+menamingtool.gui.step=Step
+menamingtool.gui.format=Number Format
+menamingtool.gui.preview=Preview
+menamingtool.msg.named=Named AE2 Block: %s
+menamingtool.tip.template=Template: %s
+menamingtool.tip.format=Format: %s  Start: %d  Step: %d
+menamingtool.tip.next=Next: %s
+menamingtool.tip.usage1=§7Shift+Right Click Air: Open Template Settings
+menamingtool.tip.usage2=§7Right Click AE2 Block: Auto Name

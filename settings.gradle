@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = "GTNH Maven"
+            url = "https://nexus.gtnewhorizons.com/repository/public/"
+        }
+        maven {
+            name = "ForgeGradle"
+            url = "https://maven.minecraftforge.net/"
+        }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "me_naming_tool"
