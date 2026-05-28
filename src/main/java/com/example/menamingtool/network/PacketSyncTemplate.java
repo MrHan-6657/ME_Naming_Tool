@@ -34,9 +34,9 @@ public class PacketSyncTemplate implements IMessage {
             if (length > 0 && length < 65536) {
                 byte[] bytes = new byte[length];
                 buf.readBytes(bytes);
-                ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
-                DataInputStream dis = new DataInputStream(bais);
-                this.data = CompressedStreamTools.read(dis);
+                try (DataInputStream dis = new DataInputStream(new ByteArrayInputStream(bytes))) {
+                    this.data = CompressedStreamTools.read(dis);
+                }
             } else {
                 this.data = new NBTTagCompound();
             }
@@ -49,8 +49,9 @@ public class PacketSyncTemplate implements IMessage {
     public void toBytes(ByteBuf buf) {
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            DataOutputStream dos = new DataOutputStream(baos);
-            CompressedStreamTools.write(data != null ? data : new NBTTagCompound(), dos);
+            try (DataOutputStream dos = new DataOutputStream(baos)) {
+                CompressedStreamTools.write(data != null ? data : new NBTTagCompound(), dos);
+            }
             byte[] bytes = baos.toByteArray();
             buf.writeInt(bytes.length);
             buf.writeBytes(bytes);

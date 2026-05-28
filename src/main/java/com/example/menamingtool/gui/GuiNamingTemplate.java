@@ -167,15 +167,26 @@ public class GuiNamingTemplate extends GuiScreen {
 
         try {
             template.setStartValue(Integer.parseInt(startValueField.getText()));
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException ignored) {
+            startValueField.setText(String.valueOf(template.getStartValue()));
+        }
 
         try {
             template.setCurrentValue(Integer.parseInt(currentValueField.getText()));
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException ignored) {
+            currentValueField.setText(String.valueOf(template.getCurrentValue()));
+        }
 
         try {
-            template.setStep(Integer.parseInt(stepField.getText()));
-        } catch (NumberFormatException ignored) {}
+            int step = Integer.parseInt(stepField.getText());
+            if (step == 0) {
+                step = 1;
+                stepField.setText("1");
+            }
+            template.setStep(step);
+        } catch (NumberFormatException ignored) {
+            stepField.setText(String.valueOf(template.getStep()));
+        }
 
         template.setFormat(formatField.getText());
     }

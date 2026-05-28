@@ -11,7 +11,7 @@ public class NamingTemplate {
     private String format = "%d";
 
     public String generateCurrentName() {
-        return template.replace("{n}", String.format(format, currentValue));
+        return template.replace("{n}", formatValue(currentValue));
     }
 
     public void advance() {
@@ -23,7 +23,15 @@ public class NamingTemplate {
     }
 
     public String previewNext() {
-        return template.replace("{n}", String.format(format, currentValue));
+        return template.replace("{n}", formatValue(currentValue));
+    }
+
+    private String formatValue(int value) {
+        try {
+            return String.format(format, value);
+        } catch (Exception e) {
+            return String.valueOf(value);
+        }
     }
 
     public NBTTagCompound writeToNBT() {

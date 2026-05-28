@@ -39,13 +39,7 @@ public class MENamingToolMod {
 
     public static Item meNamingTool;
 
-    public static CreativeTabs creativeTab = new CreativeTabs("menamingtool") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public Item getTabIconItem() {
-            return meNamingTool;
-        }
-    };
+    public static CreativeTabs creativeTab;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -53,6 +47,14 @@ public class MENamingToolMod {
 
         meNamingTool = new ItemMENamingTool();
         GameRegistry.registerItem(meNamingTool, "me_naming_tool");
+
+        creativeTab = new CreativeTabs("menamingtool") {
+            @Override
+            @SideOnly(Side.CLIENT)
+            public Item getTabIconItem() {
+                return meNamingTool;
+            }
+        };
 
         PacketHandler.init();
     }

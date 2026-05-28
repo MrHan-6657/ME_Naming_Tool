@@ -34,18 +34,13 @@ public class ItemMENamingTool extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
         if (player.isSneaking()) {
-            // rayTrace 是客户端专用方法，服务端跳过瞄准检查
-            boolean targetingBlock = false;
             if (world.isRemote) {
                 MovingObjectPosition mop = player.rayTrace(5.0D, 1.0F);
-                targetingBlock = mop != null
+                boolean targetingBlock = mop != null
                         && mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK;
-            }
-            if (!targetingBlock) {
-                if (world.isRemote) {
-                    return itemStack;
+                if (!targetingBlock) {
+                    player.openGui(MENamingToolMod.instance, MENamingToolMod.GUI_ID_TEMPLATE, world, 0, 0, 0);
                 }
-                player.openGui(MENamingToolMod.instance, MENamingToolMod.GUI_ID_TEMPLATE, world, 0, 0, 0);
             }
             return itemStack;
         }
