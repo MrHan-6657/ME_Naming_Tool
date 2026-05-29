@@ -25,7 +25,7 @@ public class MENamingToolMod {
 
     public static final String MODID = "menamingtool";
     public static final String NAME = "ME Naming Tool";
-    public static final String VERSION = "1.3.0";
+    public static final String VERSION = "1.4.0";
 
     @Mod.Instance(MODID)
     public static MENamingToolMod instance;
