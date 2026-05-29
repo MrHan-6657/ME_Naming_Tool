@@ -5,3 +5,4 @@ build/classes/
 build/sources/
 build/resources/
 build/tmp/
+build/.gitignore
